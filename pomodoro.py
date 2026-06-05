@@ -47,6 +47,8 @@ def notify(title: str, message: str):
 
 
 def bar(elapsed: int, total: int, width: int = 40, color: str = GREEN) -> str:
+    if total == 0:
+        total = 1
     filled = int(width * elapsed / total)
     empty  = width - filled
     pct    = int(100 * elapsed / total)
